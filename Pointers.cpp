@@ -93,21 +93,33 @@ double calcPi(int n) {
 	std::cout << result << std::endl;
 }*/
 
-//C++ Problem 7.1
-int strLength(char * s) {
-	int count =0;
-	char * cPtr = s;
+//C++ Problem 7.1 - Counts number of characters in s.
+int strLength(const char * s) {
+    int count =0;
+	const char * cPtr = s;
 	while (*cPtr != '\0') {
 		count++;
 		cPtr++;
+		std::cout << *cPtr << " and " << &cPtr << std::endl;
 	}
 	return count;
 };
 
+//C++ Problem 7.2 - Call by Reference Swap
+void swapValues(int * a, int * b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 
 int main() {
 	std::cout << "Hello, World!" << std::endl;
-	char tester[] = {'m', 'y', ' ', 'h', '\0'};
-	std::cout << strLength(tester);
+	//char tester[] = {'a', 'b', 'c', 'd', 'e', 'F', '\0'};
+	//std::cout << strLength(tester);
+	int x = 5;
+	int y = 17;
+	swapValues(&x,&y);
+	std::cout << x << " and " << y << std::endl;
 	return 0;
 };
