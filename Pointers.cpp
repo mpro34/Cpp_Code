@@ -105,7 +105,14 @@ int strLength(const char * s) {
 	return count;
 };
 
-//C++ Problem 7.2 - Call by Reference Swap
+//C++ Problem 7.2 - Swap Integers with Pass-by-Reference
+void swapInts(int &a, int &b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
+//C++ Problem 7.3 - Swap Integers using pointers
 void swapValues(int * a, int * b) {
 	int temp = *a;
 	*a = *b;
@@ -119,7 +126,7 @@ int main() {
 	//std::cout << strLength(tester);
 	int x = 5;
 	int y = 17;
-	swapValues(&x,&y);
+	swapInts(x,y);
 	std::cout << x << " and " << y << std::endl;
 	return 0;
-};
+}
