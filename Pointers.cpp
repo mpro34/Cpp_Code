@@ -119,14 +119,22 @@ void swapValues(int * a, int * b) {
 	*b = temp;
 }
 
+//C++ Problem 7.4 - Swap Integers by swapping pointers
+//    Contains a pointer to a pointer to a value.
+void swapPtrs(int **a, int **b) {
+    int *temp = *a;   //Temp hold the address of pointer a.
+    *a = *b;          //Swap Pointers or "addresses".
+    *b = temp;	         
+}
+
 
 int main() {
 	std::cout << "Hello, World!" << std::endl;
 	//char tester[] = {'a', 'b', 'c', 'd', 'e', 'F', '\0'};
 	//std::cout << strLength(tester);
-	int x = 5;
-	int y = 17;
-	swapInts(x,y);
+	int x = 5, y = 6;
+	int *ptr1 = &x, *ptr2 = &y;
+	swapPtrs(&ptr1,&ptr2);
 	std::cout << x << " and " << y << std::endl;
 	return 0;
 }
