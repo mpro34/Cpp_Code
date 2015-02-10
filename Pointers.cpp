@@ -127,14 +127,43 @@ void swapPtrs(int **a, int **b) {
     *b = temp;	         
 }
 
+void prob_seven() {
+    //C++ Problem 7.5 - Various Pointer "one-liners".
+    char *oddOrEven = "Never odd or even";
+    //1. Assigns nthCharPtr to the 6th char of oddOrEven
+    char *nthCharPtr = oddOrEven + 6;
+    //2. Advances nthCharPtr 2 spaces with pointer arithmetic
+    nthCharPtr+=2;
+    //3. Print value that nthCharPtr points to
+    std::cout << "value1: " << *nthCharPtr << std::endl;
+    //4. Creates a pointer to a pointer (nthCharPtr)
+    char **pointerPtr = &nthCharPtr;
+    //5. Accesses value that pointerPtr is pointing to. (address of nthCharPtr)
+    std::cout << "value2: " << *pointerPtr << std::endl;
+    //6. Accesses value that nthCharPtr is pointing to through pointerPtr
+    std::cout << "value3: " << **pointerPtr << std::endl;
+    //7. Updates the pointer of nthCharPtr
+    nthCharPtr++;
+    //8. Prints how far away nthCharPtr is from the beginning of the string.
+    char val = *nthCharPtr;
+    int count = 0;
+    while (val != 'N') {
+	    count++;
+        nthCharPtr--;
+		val = *nthCharPtr;
+    };
+	std::cout << "Count: " << count << std::endl;
+};
+
 
 int main() {
 	std::cout << "Hello, World!" << std::endl;
-	//char tester[] = {'a', 'b', 'c', 'd', 'e', 'F', '\0'};
-	//std::cout << strLength(tester);
+	/*char tester[] = {'a', 'b', 'c', 'd', 'e', 'F', '\0'};
+	/std::cout << strLength(tester);
 	int x = 5, y = 6;
 	int *ptr1 = &x, *ptr2 = &y;
 	swapPtrs(&ptr1,&ptr2);
-	std::cout << x << " and " << y << std::endl;
+	std::cout << x << " and " << y << std::endl;*/
+	prob_seven();
 	return 0;
 }
