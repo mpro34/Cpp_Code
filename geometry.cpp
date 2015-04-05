@@ -1,9 +1,14 @@
+#include <cmath>
+#include <iostream>
+#include <cstdlib>
 /*
- * Add function declaration and algorithms here so that the prototypes from the header files are implemented.
+ * Add function definitions here.
  */
-class Point 
-{
-	public:
-	
-	
-}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
