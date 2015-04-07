@@ -16,15 +16,10 @@
 	Point p(0,0);
 	Point p1(2,3);
 	Point p2(5,6);
-	Point pA [3];
-	pA[0] = p;
-	pA[1] = p1;
-	pA[2] = p2;
+	Point pA[3] = {p, p1, p2};
 	//Create a point array after defining the points above.
-	PointArray parr(pA,3);
-	parr.resize(5);
-	std::cout << "here: " << "parr" << std::endl;
-	
-    std::cout << p.getX() << std::endl;
+	PointArray pArray(pA,3);
+	pArray.resize(5);
+	std::cout << "here: " << pArray.showNum(1) << std::endl;
 	return 0;
 };

@@ -33,7 +33,9 @@ class PointArray {
 		};
 	    //Default constructor which takes in an array of Point objects and a size.
 	    PointArray(const Point points[], const int size) {
-			for (int i=0; i < size; i++){
+			m_size = size+1;
+			m_points = new Point[size+1];
+			for (int i=0; i < size+1; i++){
 				m_points[i] = points[i];
 			};
 		};
@@ -51,7 +53,22 @@ class PointArray {
 		~PointArray() {
 			delete [] m_points;
 		}
+		int showNum(int n);
+		//Some Point Array Operations member functions.
 		void resize(int n);
+		//Add a Point to the end of the array.
+		void push_back(const Point &p);
+		//Insert a point at position and shifting the other elements to the right.
+		void insert(const int position, const Point &p);
+		//Remove a point at position (pos) and shifting elements left.
+		void remove(const int pos);
+		//Get the size of the array.
+		const int getSize();
+		//Remove everything from the array and set size to 0.
+		void clear();
+		//Get a pointer to the element at position.
+		const Point *get(const int position);
+		
 };
 
 

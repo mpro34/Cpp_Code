@@ -19,16 +19,48 @@
 	};
 	
 //Use new[] and delete[], respectively to allocate and de-allocate memory.
-    void PointArray::resize(int n) {
-	    int old_values = (m_size < n) ? n : (m_size-n);
-	    Point *new_points = new Point[n];                  //Allocates a new array of Pointer Objects, size n.
-	    for (int i=0; i < m_size; i++) {                   //Sets the member values to the values of this newly created array
-		    new_points[i] = m_points[i];
-	    };
-		delete[] new_points;                               //Deallocates the newly created array!!
-	    m_size = n;
-		m_points = new_points;
+	void PointArray :: resize ( int newSize ) {
+		//Allocates a new array of Pointer Objects, size n.
+        Point *pts = new Point [ newSize ];
+        int minSize = ( newSize > m_size ? m_size : newSize );
+		//Sets the member values to the values of this newly created array
+        for (int i = 0; i < minSize ; i++) {
+            pts[i] = m_points[i];
+		};
+		//Deallocates the newly created array!!
+        delete [] m_points ;
+        m_size = newSize;
+		m_points = pts;
     };
+	
+	int PointArray::showNum(int n) {
+		return m_points[n].getX();
+	};
+	
+	//Add a Point to the end of the array.
+	void PointArray::push_back(const Point &p) {
+		
+	};
+	//Insert a point at position and shifting the other elements to the right.
+	void PointArray::insert(const int position, const Point &p) {
+		
+	};
+	//Remove a point at position (pos) and shifting elements left.
+	void PointArray::remove(const int pos) {
+		
+	};
+	//Get the size of the array.
+	const int PointArray::getSize() {
+		
+	};
+	//Remove everything from the array and set size to 0.
+	void PointArray::clear() {
+		
+	};
+	//Get a pointer to the element at position.
+	const Point *PointArray::get(const int position) {
+		
+	};
  
  
  
