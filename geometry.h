@@ -33,7 +33,7 @@ class PointArray {
 		};
 	    //Default constructor which takes in an array of Point objects and a size.
 	    PointArray(const Point points[], const int size) {
-			m_size = size+1;
+			m_size = size;
 			m_points = new Point[size+1];
 			for (int i=0; i < size+1; i++){
 				m_points[i] = points[i];

@@ -19,7 +19,7 @@
 	};
 	
 //Use new[] and delete[], respectively to allocate and de-allocate memory.
-	void PointArray :: resize ( int newSize ) {
+	void PointArray::resize ( int newSize ) {
 		//Allocates a new array of Pointer Objects, size n.
         Point *pts = new Point [ newSize ];
         int minSize = ( newSize > m_size ? m_size : newSize );
@@ -39,7 +39,8 @@
 	
 	//Add a Point to the end of the array.
 	void PointArray::push_back(const Point &p) {
-		
+		resize(m_size + 1);
+		m_points[m_size - 1] = p;
 	};
 	//Insert a point at position and shifting the other elements to the right.
 	void PointArray::insert(const int position, const Point &p) {
