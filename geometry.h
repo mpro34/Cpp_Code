@@ -53,7 +53,7 @@ class PointArray {
 		~PointArray() {
 			delete [] m_points;
 		}
-		int showNum(int n);
+		void printArray();
 		//Some Point Array Operations member functions.
 		void resize(int n);
 		//Add a Point to the end of the array.
