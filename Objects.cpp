@@ -21,7 +21,8 @@
 	//Create a point array after defining the points above.
 	PointArray pArray(pA,3);       //Create new PointArray object pArray with pA.
     pArray.push_back(pT);          //Add new Point pT to the end of pArray.
-	pArray.resize(5);              //Resize pArray to 5 total Points
-	std::cout << "here: " << pArray.showNum(4) << std::endl;
+	//pArray.resize(5);              //Resize pArray to 5 total Points
+	pArray.insert(3,pT);
+	std::cout << "here: " << pArray.showNum(1) << std::endl;
 	return 0;
 };

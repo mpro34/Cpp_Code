@@ -44,7 +44,12 @@
 	};
 	//Insert a point at position and shifting the other elements to the right.
 	void PointArray::insert(const int position, const Point &p) {
-		
+		resize(m_size+1); //Add 1 to current size of PointArray.
+	//	Point* newPoints = new Point[m_size+1];
+	    m_points[position] = p;
+		for (int i=position+1; i < m_size; i++) {
+            m_points[i];
+		};
 	};
 	//Remove a point at position (pos) and shifting elements left.
 	void PointArray::remove(const int pos) {
