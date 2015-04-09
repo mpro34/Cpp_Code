@@ -12,7 +12,6 @@
  
  
  int main() {
-	std::cout << "Hello, World!" << std::endl;
 	Point p(1,2);
 	Point p1(2,3);
 	Point p2(5,6);
@@ -24,6 +23,11 @@
     pArray.push_back(pT);          //Add new Point pT to the end of pArray.
 	pArray.resize(5);              //Resize pArray to 5 total Points
 	pArray.insert(3,pI);
+	pArray.getSize();
+	pArray.printArray();
+	pArray.get(5);
+    pArray.clear();              //Clear the contents of the Point Array.
+	pArray.getSize();
 	pArray.printArray();
 	//std::cout << "here: " << pArray.showNum(3) << std::endl;
 	return 0;

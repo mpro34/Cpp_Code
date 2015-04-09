@@ -60,15 +60,17 @@
 	};
 	//Get the size of the array.
 	const int PointArray::getSize() {
-		
+		return m_size;
 	};
 	//Remove everything from the array and set size to 0.
 	void PointArray::clear() {
-		
+		resize(0);
+		m_size = 0;
+		//delete[] m_points;
 	};
 	//Get a pointer to the element at position.
 	const Point *PointArray::get(const int position) {
-		
+		return position >= 0 && position < m_size ? m_points + position : NULL;
 	};
  
  
