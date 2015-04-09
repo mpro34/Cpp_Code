@@ -71,6 +71,32 @@ class PointArray {
 		
 };
 
+//This is the Polygon class which will simulte polygon objects with Point Arrays.
+class Polygon {
+	protected:
+	    PointArray m_points;
+		static int num_Polygons;
+	public:
+	//Member initialization list of polygon default constructor.
+	    Polygon(const Point ps[], const int size) : m_points(ps, size) {
+			num_Polygons++;
+		};
+		
+		Polygon(const PointArray &pa) : m_points(pa) {
+			num_Polygons++;
+		};
+		
+		~Polygon() {
+			num_Polygons--;
+		};
+		
+		//Member Functions
+		virtual const double area() = 0; 
+		static int getNumPolygons() { return num_Polygons; };
+		const int getNumSides() { return m_points.getSize(); };
+		const Point* getPoints() { return m_points.get(0); };
+};
+
 
 
 

@@ -29,6 +29,8 @@
     pArray.clear();              //Clear the contents of the Point Array.
 	pArray.getSize();
 	pArray.printArray();
+	
+	//SPolygon(pArray, 1);
 	//std::cout << "here: " << pArray.showNum(3) << std::endl;
 	return 0;
 };
