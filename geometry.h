@@ -98,6 +98,17 @@ class Polygon {
 };
 
 
+class Triangle: public Polygon {
+	private:
+	    Point m_p1, m_p2, m_p3;
+	
+	public:
+	    const double area() {
+			
+		}
+};
+
+
 
 
 

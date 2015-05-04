@@ -72,8 +72,6 @@
 	const Point *PointArray::get(const int position) {
 		return position >= 0 && position < m_size ? m_points + position : NULL;
 	};
-	
- 
  
  
  
